@@ -7,6 +7,7 @@
     <tr>
       <th scope="col">#</th>
       <th scope="col">Title</th>
+      <th scope="col">Type</th>
       <th scope="col">Description</th>
       <th scope="col"></th>
     </tr>
@@ -16,6 +17,7 @@
     <tr>
       <th scope="row">{{$item->id}}</th>
       <td><a href="{{route('admin.projects.show', $item)}}">{{$item->title}}</a></td>
+      <td>{{$item->type->slug}}</td>
       <td>{{$item->description}}</td>
       <td></td>
     </tr>
