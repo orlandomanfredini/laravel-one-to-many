@@ -29,6 +29,10 @@ Route::middleware(['auth', 'verified'])
         return view('admin.dashboard');
     })->name('dashboard');
 
+    Route::get('/', function () {
+        return view('admin.welcome');
+    });
+
     Route::resource('projects', ProjectController::class);
 });
 

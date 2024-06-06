@@ -17,7 +17,7 @@
     <tr>
       <th scope="row">{{$item->id}}</th>
       <td><a href="{{route('admin.projects.show', $item)}}">{{$item->title}}</a></td>
-      <td>{{$item->type->type}}</td>
+      <td>{{$item->type ? $item->type->type : 'N.C'}}</td>
       <td>{{$item->description}}</td>
       <td class="d-flex gap-3 align-items-center justify-content-center">
         <a href="{{route('admin.projects.edit', $item)}}">Modifica</a>
