@@ -9,5 +9,8 @@
         SLUG: {{$project->slug}}
     </div>
     <p class="text-center">DESCRIPTION: {{$project->description}}</p>
+    <div class="text-center">
+        TYPE: {{$project->type->type}}
+    </div>
 </div>
 @endsection

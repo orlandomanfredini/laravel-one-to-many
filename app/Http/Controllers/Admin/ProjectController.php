@@ -3,8 +3,13 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\StoreProjectRequest;
+use App\Http\Requests\UpdateProjectRequest;
 use App\Models\Project;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
+use App\Models\Type;
+
 
 class ProjectController extends Controller
 {
@@ -25,20 +30,27 @@ class ProjectController extends Controller
     public function create()
     {
         //
-        return view('admin.create');
+
+        $types= Type::orderBy('type', 'asc')->get();
+
+        return view('admin.projects.create', compact('types'));
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(StoreProjectRequest $request)
     {
         //
-        $form_data= $request->all();
+        $form_data= $request->validated();
 
-        $new_preoject= Project::create($form_data);
+        $slug = Str::slug($form_data['title']); 
+        $form_data['slug']=$slug;
 
-        return to_route('admin.projects.show', $new_preoject);
+        $new_project= Project::create($form_data);
+
+        return to_route('admin.projects.show', $new_project);
+
     }
 
     /**
@@ -56,12 +68,15 @@ class ProjectController extends Controller
     public function edit(Project $project)
     {
         //
+        $types= Type::orderBy('type', 'asc')->get();
+        return view('admin.projects.edit', compact('project', 'types'));
+        
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Project $project)
+    public function update(UpdateProjectRequest $request, Project $project)
     {
         //
     }

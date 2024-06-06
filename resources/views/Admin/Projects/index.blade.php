@@ -17,9 +17,11 @@
     <tr>
       <th scope="row">{{$item->id}}</th>
       <td><a href="{{route('admin.projects.show', $item)}}">{{$item->title}}</a></td>
-      <td>{{$item->type->slug}}</td>
+      <td>{{$item->type->type}}</td>
       <td>{{$item->description}}</td>
-      <td></td>
+      <td>
+        <a href="{{route('admin.projects.edit', $item)}}">Modifica</a>
+      </td>
     </tr>
     @endforeach
 </tbody>
