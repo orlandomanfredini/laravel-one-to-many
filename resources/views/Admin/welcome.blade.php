@@ -1,9 +1,10 @@
 @extends('layouts.app')
 
 @section('content')
-<section class="p-5 mt-5">
-    <h3>Orlando's GitHub Random</h3>
-    p
+<section class="p-5 mt-2">
+    <h3 class="text-center m2-5">Orlando's GitHub Random</h3>
+    <p class="text-center mb-5 container-sm">Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia eos, animi minus error deleniti maxime quibusdam est, corrupti, voluptatibus nam odio nemo fuga fugit blanditiis! Sit voluptas tempora quod quasi.</p>
+    
 <div class="container">
     <div class="row g-2">
         <div class="col-6">
