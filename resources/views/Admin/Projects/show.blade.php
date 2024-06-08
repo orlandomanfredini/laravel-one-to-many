@@ -12,6 +12,11 @@
     <div class="text-center">
         TYPE: {{$project->type ? $project->type->slug : 'Nessuna Categoria'}}
     </div>
+    <div class="text-center d-flex gap-2">
+        @foreach ($project->tecnologies as $tecnology )
+        <>{{$tecnology->tecnology}}</>
+        @endforeach
+    </div>
     <div class="d-flex align-items-center justify-content-center gap-4 mt-3" id="form">
         <a href="{{route('admin.projects.edit', $project)}}">Modifica</a>
         <form action="{{route('admin.projects.destroy', $project)}}" method="POST">

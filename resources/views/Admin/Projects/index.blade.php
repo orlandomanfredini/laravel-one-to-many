@@ -8,7 +8,6 @@
         <th scope="col">#</th>
         <th scope="col">Title</th>
         <th scope="col">Type</th>
-        <th scope="col">Tecnology</th>
         <th scope="col">Description</th>
         <th scope="col"></th>
       </tr>
@@ -19,7 +18,6 @@
       <th scope="row">{{$item->id}}</th>
       <td><a href="{{route('admin.projects.show', $item)}}">{{$item->title}}</a></td>
       <td>{{$item->type ? $item->type->type : 'N.C'}}</td>
-      <td>{{$item->tecnology ? $}}</td>
       <td>{{$item->description}}</td>
       <td class="d-flex gap-3 align-items-center justify-content-center" id="form">
         <a href="{{route('admin.projects.edit', $item)}}">Modifica</a>
