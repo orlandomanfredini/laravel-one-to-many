@@ -10,11 +10,12 @@
     </div>
     <p class="text-center">DESCRIPTION: {{$project->description}}</p>
     <div class="text-center">
-        TYPE: {{$project->type ? $project->type->slug : 'Nessuna Categoria'}}
+        TYPE: <strong>{{$project->type ? $project->type->slug : 'Nessuna Categoria'}}</strong>
     </div>
-    <div class="text-center d-flex gap-2">
+    <div class="text-center d-flex gap-2 justify-content-center mt-3">
+        <span>Tecnology:</span>
         @foreach ($project->tecnologies as $tecnology )
-        <>{{$tecnology->tecnology}}</>
+            <strong class="d-block">{{$tecnology->tecnology}}</strong>
         @endforeach
     </div>
     <div class="d-flex align-items-center justify-content-center gap-4 mt-3" id="form">

@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreProjectRequest;
 use App\Http\Requests\UpdateProjectRequest;
 use App\Models\Project;
+use App\Models\Tecnology;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 use App\Models\Type;
@@ -32,8 +33,9 @@ class ProjectController extends Controller
         //
 
         $types= Type::orderBy('type', 'asc')->get();
+        $tecnologys= Tecnology::orderBy('tecnology', 'asc')->get();
 
-        return view('admin.projects.create', compact('types'));
+        return view('admin.projects.create', compact('types', 'tecnologys'));
     }
 
     /**
@@ -48,6 +50,11 @@ class ProjectController extends Controller
         $form_data['slug']=$slug;
 
         $new_project= Project::create($form_data);
+        
+
+        if($request->has('tecnologys')){
+            $new_project->tecnologies()->attach($request->tecnologys);
+        }
 
         return to_route('admin.projects.show', $new_project);
 
@@ -68,8 +75,11 @@ class ProjectController extends Controller
     public function edit(Project $project)
     {
         //
+        $project->load(['tecnologies']);
         $types= Type::orderBy('type', 'asc')->get();
-        return view('admin.projects.edit', compact('project', 'types'));
+        $tecnologys= Tecnology::orderBy('tecnology', 'asc')->get();
+       
+        return view('admin.projects.edit', compact('project', 'types', 'tecnologys'));
         
     }
 
@@ -82,6 +92,17 @@ class ProjectController extends Controller
         $form_data= $request->validated();
 
         $project->update($form_data);
+
+        // if ($request->has('tencnologys')) {
+        //     $project->tecnologies()->sync($request->tecnologys);
+        // } else {
+        //     // l'utente non ha selezionato niente eliminiamo i collegamenti con i tags
+        //     $project->tecnologies()->detach();
+        //     // $project->tags()->sync([]); // fa la stessa cosa
+        // }
+        $project->tecnologies()->sync($request->tecnologys ?? []);
+       
+        
         return view('admin.projects.show', compact('project'));
     }
 
