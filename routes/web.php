@@ -25,7 +25,8 @@ Route::middleware(['auth', 'verified'])
 ->name('admin.')
 ->prefix('admin')
 ->group(function(){
-    Route::get('/', function () {
+   
+    Route::get('/dashboard', function () {
         return view('admin.dashboard');
     })->name('dashboard');
 
