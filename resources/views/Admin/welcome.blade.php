@@ -2,8 +2,7 @@
 
 <style>
 main{
-    width: 100%;
-    height: 100%;
+    
     background-color:rgb(41, 46, 54) ;
 }
 
@@ -18,6 +17,11 @@ main{
 
 .card_new_type{
     background-image: url('https://t4.ftcdn.net/jpg/05/54/47/79/360_F_554477926_yKEcMeDTD1oLqKQCjvpryeT5zHLMunNh.jpg');
+
+}
+.card_tecnologies{
+    background-image: url('https://media.istockphoto.com/id/914850254/vector/abstract-background-with-binary-code-analysis-and-data-transfer.jpg?s=612x612&w=0&k=20&c=EzLj5Amdjo1U_ioNoKU6d8Kc-wfOpZmK7w4O0aapVx8=');
+    background-position: center;
 
 }
 </style>
@@ -48,6 +52,12 @@ main{
                 <div class="card card_new_type d-flex align-items-center justify-content-center p-5">
                     <h2 class="text-white mt-3">ADD TYPE</h2>
                     <a class="text-white" href="{{route('admin.types.create')}}">Add Type</a>
+                </div>
+            </div>
+            <div class="col-12">
+                <div class="card_tecnologies card d-flex align-items-center justify-content-center p-5">
+                    <h2 class="text-white mt-3">TECNOLOGYS</h2>
+                    <a class="text-white" href="{{route('admin.tecnologies.index')}}">View</a>
                 </div>
             </div>
         </div>
