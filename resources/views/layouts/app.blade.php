@@ -18,7 +18,6 @@
     <!-- Usando Vite -->
     @vite(['resources/js/app.js'])
 </head>
-
 <body>
     <div id="app">
 
