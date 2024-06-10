@@ -8,10 +8,10 @@
         <div class="mb-3">
             <label for="type" class="form-label">Add Type:</label>
             <input type="text" min="0" max="999" step="1" name="type" class="form-control" id="type"
-                placeholder="inserisci descrizione">
+                placeholder="inserisci tipologia...">
         </div>
         <div class="mt-5">
-            <button class="btn btn-primary">ADD</button>
+            <button class="btn btn-primary">Aggungi</button>
         </div>
 
 

@@ -77,6 +77,7 @@
                                 <a class="dropdown-item" href="{{ url('profile') }}">{{__('Profile')}}</a>
                                 <a class="dropdown-item" href="{{ route('admin.projects.create') }}">{{__('Add Project')}}</a>
                                 <a class="dropdown-item" href="{{ route('admin.types.create') }}">{{__('Add Type')}}</a>
+                                <a class="dropdown-item" href="{{ route('admin.types.index') }}">{{__('Type of Projerct')}}</a>
                                 <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
                                     {{ __('Logout') }}
