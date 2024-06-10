@@ -16,7 +16,7 @@
 
 
         <div class="mb-3">
-            <label for="attack" class="form-label">Description</label>
+            <label for="description" class="form-label">Description</label>
             <input type="text" min="0" max="999" step="1" name="description" class="form-control" id="description"
                 placeholder="inserisci descrizione">
         </div>

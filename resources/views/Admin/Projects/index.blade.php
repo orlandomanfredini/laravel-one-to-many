@@ -19,8 +19,9 @@
       <td><a href="{{route('admin.projects.show', $item)}}">{{$item->title}}</a></td>
       <td>{{$item->type ? $item->type->type : 'N.C'}}</td>
       <td>{{$item->description}}</td>
-      <td class="d-flex gap-3 align-items-center justify-content-center" id="form">
-        <a href="{{route('admin.projects.edit', $item)}}">Modifica</a>
+      <td class="" id="form">
+        <div class="d-flex gap-3 align-items-center justify-content-center">
+          <a href="{{route('admin.projects.edit', $item)}}">Modifica</a>
 
         <form action="{{route('admin.projects.destroy', $item)}}" method="POST">
         @csrf
@@ -57,7 +58,8 @@
 
           })
         </script> -->
-      </td>
+        </div>
+        </td>
       </tr>
     @endforeach
     </tbody>
