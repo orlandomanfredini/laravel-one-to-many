@@ -25,6 +25,8 @@ class TecnologyController extends Controller
     public function create()
     {
         //
+        $tecnologies= Tecnology::orderBy('tecnology', 'asc');
+        return to_route('admin.tecnologies.create', compact('tecnologies'));
     }
 
     /**
@@ -33,6 +35,10 @@ class TecnologyController extends Controller
     public function store(Request $request)
     {
         //
+        $data= $request->validated();
+
+        $new_tecnologies= Tecnology::create($data);
+
     }
 
     /**
